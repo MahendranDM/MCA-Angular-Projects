@@ -2,38 +2,52 @@
 <html lang="en" ng-app="campus360">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
-  <script src="js/app.js"></script>
-  <title>Basic Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Basic Details</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
 
 <body ng-controller="DashboardController">
-  <center>
 
-    <h2>{{collegename}}</h2>
+    <center>
 
-    <h1>Name: {{name}}</h1>
-    <h2>City: {{city}}</h2>
+        <input type="text" ng-model="collegename">
+        <h2>{{collegename}}</h2>
 
-    <input type="number" ng-model="age">
+        <input type="text" ng-model="name">
+        <h2>Name: {{name}}</h2>
 
-    <h3>Age: {{age}}</h3>
+        <input type="text" ng-model="city">
+        <h2>City: {{city}}</h2>
 
-    <button ng-click="age = age + 1">
-      Increase Age
-    </button>
+        <input type="number" ng-model="age">
+        <h2>Age: {{age}}</h2>
 
-    <h3> Total Students : {{totalStudents}}</h3>
+        <button ng-click="age = age + 1">
+            Increase Age
+        </button>
 
-    <h2>Student List</h2>
-    <ul>
-      <li ng-repeat="student in students track by $index">
-        {{student}}
-      </li>
-    </ul>
-  </center>
+        <hr>
+
+        <h2>Total Students: {{students.length}}</h2>
+
+        <button ng-click="addStudent()">
+            Add Student
+        </button>
+
+        <h2>Student List</h2>
+
+        <ul>
+            <li ng-repeat="student in students track by $index">
+                {{student}}
+            </li>
+        </ul>
+
+    </center>
 
 </body>
 

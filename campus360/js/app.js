@@ -6,15 +6,21 @@ app.controller("DashboardController", function ($scope) {
     $scope.name = "Mahendran DM";
     $scope.city = "Kollam";
     $scope.age = 23;
-    $scope.totalStudents = 1230;
 
     console.log("Dashboard Controller is loaded");
 
     $scope.students = [
-        "Mahendran DM", "Anandhu", "Akhil", "Athul", "Anandhu"
+        "Mahendran DM",
+        "Anandhu",
+        "Akhil",
+        "Athul",
+      
     ];
 
+
+      console.log($scope.students);
     $scope.addStudent = function () {
-        $scope.totalStudents++;
+        $scope.students.push("New Student");
     };
+
 });
