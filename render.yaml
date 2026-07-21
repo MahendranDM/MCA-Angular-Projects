@@ -3,4 +3,5 @@ services:
     name: mca-angular-project-demo
     env: static
     buildCommand: ""
-    staticPublishPath: ./
+    staticPublishPath: campus360
+
