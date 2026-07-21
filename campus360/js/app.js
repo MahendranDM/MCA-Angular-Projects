@@ -13,12 +13,9 @@ app.controller("DashboardController", function ($scope) {
         "Mahendran DM",
         "Anandhu",
         "Akhil",
-        "Athul",
-      
+        "Athul"
     ];
 
-
-      console.log($scope.students);
     $scope.addStudent = function () {
         $scope.students.push("New Student");
     };
