@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: mca-angular-project-demo
+    env: static
+    buildCommand: ""
+    staticPublishPath: ./
