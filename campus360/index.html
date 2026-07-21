@@ -11,11 +11,35 @@
 
 <body ng-controller="DashboardController">
   <center>
-    <h1>{{collegename}}</h1>
-    <h1>{{name}}</h1>
-    <h2>{{city}}</h2>
-    <h3>{{age}}</h3>
+  
+    <h2>{{collegename}}</h2>
+
+    <h1>Name: {{name}}</h1>
+    <h2>City: {{city}}</h2>
+  
+<input type="number" ng-model="age">
+
+<h3>Age: {{age}}</h3>
+
+<button ng-click="age = age + 1">
+    Increase Age
+</button>
+
+<h3> Total Students : {{totalStudents}}</h3>
+
+
+
+
+<h2>Student List</h2>
+<ul>
+  
+    <li ng-repeat="student in students track by $index">
+      {{student}} 
+    </li>
+</ul>
   </center>
+
+
 </body>
 
 </html>
