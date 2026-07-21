@@ -10,15 +10,11 @@ app.controller("DashboardController", function ($scope) {
 
     console.log("Dashboard Controller is loaded");
 
-
     $scope.students = [
-        "Mahendran DM","Anandhu", "Akhil", "Athul", "Anandhu"];
+        "Mahendran DM", "Anandhu", "Akhil", "Athul", "Anandhu"
+    ];
 
-
-        $scope.addStudent = function () {
-
-            $scope.totalStudents++;
-
-
-        };
+    $scope.addStudent = function () {
+        $scope.totalStudents++;
+    };
 });
