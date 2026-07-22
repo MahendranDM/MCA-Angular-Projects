@@ -20,7 +20,10 @@ $scope.today = new Date();
 
 $scope.departments = ["CSE", "IMCA", "MCA", "Mech", "Civil", "EEE", "MBA"];
 $scope.selectDepartment = " ";
-
+$scope.isDisabled = true;
+$scope.allowAdmission = function () {
+    $scope.isDisabled = false;
+};
 
     $scope.addStudent = function () {
         $scope.totalStudents++;
