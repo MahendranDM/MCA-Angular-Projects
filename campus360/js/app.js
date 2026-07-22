@@ -1,13 +1,12 @@
 var app = angular.module('campus360', []);
 
-app.controller("DashboardController", function ($scope) {
+app.controller('dashboardController', function ($scope) {
 
-    $scope.collegename = "FISAT";
-    $scope.name = "Mahendran DM";
-    $scope.city = "Kollam";
-    $scope.age = 23;
+    $scope.collegeName = "Campus360";
+    $scope.totalStudents = 2500;
+    $scope.totalFaculty = 94;
 
-    console.log("Dashboard Controller is loaded");
+    $scope.showStudents = false;
 
     $scope.students = [
         "Mahendran DM",
@@ -17,7 +16,7 @@ app.controller("DashboardController", function ($scope) {
     ];
 
     $scope.addStudent = function () {
-        $scope.students.push("New Student");
+        $scope.totalStudents++;
     };
 
 });

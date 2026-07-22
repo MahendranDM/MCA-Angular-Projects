@@ -1,53 +1,56 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="campus360">
+<!doctype html>
+<html ng-app="campus360">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Dashboard</title>
 
-    <title>Basic Details</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
     <script src="js/app.js"></script>
 </head>
 
-<body ng-controller="DashboardController">
+<body ng-controller="dashboardController">
 
-    <center>
+    <h1>{{collegeName}}</h1>
 
-        <input type="text" ng-model="collegename">
-        <h2>{{collegename}}</h2>
+    <input type="text"
+           ng-model="collegeName">
 
-        <input type="text" ng-model="name">
-        <h2>Name: {{name}}</h2>
+    <br><br>
 
-        <input type="text" ng-model="city">
-        <h2>City: {{city}}</h2>
+    <input type="number"
+           ng-model="totalStudents">
 
-        <input type="number" ng-model="age">
-        <h2>Age: {{age}}</h2>
+    <p>Total Students : {{totalStudents}}</p>
 
-        <button ng-click="age = age + 1">
-            Increase Age
-        </button>
+    <button ng-click="addStudent()">
+        Add Student
+    </button>
 
-        <hr>
+    <br><br>
 
-        <h2>Total Students: {{students.length}}</h2>
+    <input type="number"
+           ng-model="totalFaculty">
 
-        <button ng-click="addStudent()">
-            Add Student
-        </button>
+    <p>Total Faculty : {{totalFaculty}}</p>
 
-        <h2>Student List</h2>
+    <button ng-click="totalFaculty = totalFaculty + 1">
+        Add Faculty
+    </button>
 
-        <ul>
-            <li ng-repeat="student in students track by $index">
-                {{student}}
-            </li>
-        </ul>
+    <hr>
 
-    </center>
+    <h2>Student List</h2>
+
+    <button ng-click="showStudents = !showStudents">
+       Show Students
+    </button>
+
+    <ul ng-show="showStudents">
+        <li ng-repeat="student in students">
+            {{student}}
+        </li>
+    </ul>
 
 </body>
 
