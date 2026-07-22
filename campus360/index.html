@@ -35,7 +35,8 @@
     <input type="number"
            ng-model="totalFaculty">
 
-    <p>Total Faculty : {{totalFaculty}}</p>
+    <p ng-style="{ 'color': totalFaculty >= 100 ? 'green' : 'red', }">
+       <b>Total Faculty : {{totalFaculty}}</p></b> 
 
     <button ng-click="totalFaculty = totalFaculty + 1">
         Add Faculty
