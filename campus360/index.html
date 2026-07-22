@@ -55,13 +55,30 @@
             {{student}}
         </li>
     </ul>
-
+<hr>
 <h2>Filter Demo</h2>
 <p>Uppercase:{{collegeName | uppercase}}</p>
 <p>Lowercase:{{collegeName | lowercase}}</p>
 <p>Currency:{{fees | currency}}</p>
 <p> Date: {{today | date:'dd/MM/yyyy' }}</p>
 <p>TotalStudents : {{ totalStudents | number:2}}</p>
+
+<hr>
+
+<h2>Selected Department</h2>
+
+<label for="department">Choose a Department</label>
+<br>
+<br>
+<select ng-model="selectDepartment"
+        ng-options="department for department in departments">
+</select>
+<p>
+    
+    Selected Department : {{selectDepartment}}
+</p>
+<hr>
+
 
 
 

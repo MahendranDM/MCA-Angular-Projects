@@ -18,6 +18,9 @@ app.controller('dashboardController', function ($scope) {
 $scope.fees =25500;
 $scope.today = new Date();
 
+$scope.departments = ["CSE", "IMCA", "MCA", "Mech", "Civil", "EEE", "MBA"];
+$scope.selectDepartment = "CSE";
+
 
     $scope.addStudent = function () {
         $scope.totalStudents++;
