@@ -1,88 +1,149 @@
 <!doctype html>
 <html ng-app="campus360">
 
-<head>
-    <meta charset="UTF-8">
-    <title>College Dashboard</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>College Dashboard</title>
 
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="js/app.js"></script>
-    <link rel="stylesheet" href="css/style.css" />
-</head>
+        <script src="node_modules/angular/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
 
-<body ng-controller="dashboardController">
+    <body ng-controller="dashboardController">
 
-    <h1>{{collegeName}}</h1>
+        <h1>{{collegeName}}</h1>
 
-    <input type="text"
-           ng-model="collegeName">
+        <input type="text" ng-model="collegeName">
 
-    <br><br>
+        <br><br>
 
-    <input type="number"
-           ng-model="totalStudents">
+        <input type="number" ng-model="totalStudents">
 
-    <p ng-class="{'green': totalStudents >= 1000, 'red': totalStudents < 1000}">
-        
-        Total Students : {{totalStudents}}</p>
+        <p ng-class="{'green': totalStudents >= 1000, 'red': totalStudents < 1000}">
 
-    <button ng-click="addStudent()">
-        Add Student
-    </button>
+            Total Students : {{totalStudents}}</p>
 
-    <br><br>
+        <button ng-click="addStudent()">
+            Add Student
+        </button>
 
-    <input type="number"
-           ng-model="totalFaculty">
+        <br><br>
 
-    <p ng-style="{ 'color': totalFaculty >= 100 ? 'green' : 'red', }">
-       <b>Total Faculty : {{totalFaculty}}</p></b> 
+        <input type="number" ng-model="totalFaculty">
 
-    <button ng-click="totalFaculty = totalFaculty + 1">
-        Add Faculty
-    </button>
+        <p ng-style="{ 'color': totalFaculty >= 100 ? 'green' : 'red', }">
+            <b>Total Faculty : {{totalFaculty}}
+        </p></b>
 
-    <hr>
+        <button ng-click="totalFaculty = totalFaculty + 1">
+            Add Faculty
+        </button>
 
-    <h2>Student List</h2>
+        <hr>
 
-    <button ng-click="showStudents = !showStudents">
-       Show Students
-    </button>
+        <h2>Student List</h2>
 
-    <ul ng-show="showStudents">
-        <li ng-repeat="student in students">
-            {{student}}
-        </li>
-    </ul>
-<hr>
-<h2>Filter Demo</h2>
-<p>Uppercase:{{collegeName | uppercase}}</p>
-<p>Lowercase:{{collegeName | lowercase}}</p>
-<p>Currency:{{fees | currency}}</p>
-<p> Date: {{today | date:'dd/MM/yyyy' }}</p>
-<p>TotalStudents : {{ totalStudents | number:2}}</p>
+        <button ng-click="showStudents = !showStudents">
+            Show Students
+        </button>
 
-<hr>
+        <ul ng-show="showStudents">
+            <li ng-repeat="student in students">
+                {{student}}
+            </li>
+        </ul>
+        <hr>
+        <h2>Filter Demo</h2>
+        <p>Uppercase:{{collegeName | uppercase}}</p>
+        <p>Lowercase:{{collegeName | lowercase}}</p>
+        <p>Currency:{{fees | currency}}</p>
+        <p> Date: {{today | date:'dd/MM/yyyy' }}</p>
+        <p>TotalStudents : {{ totalStudents | number:2}}</p>
 
-<h2>Selected Department</h2>
+        <hr>
 
-<label for="department">Choose a Department</label>
-<br>
-<br>
-<select ng-model="selectDepartment"
-        ng-options="department for department in departments">
-</select>
-<p>
-    
-    Selected Department : {{selectDepartment}}
-</p>
-<hr>
+        <h2>Selected Department</h2>
+
+        <label for="department">Choose a Department</label>
+        <br>
+        <br>
+        <select ng-model="selectDepartment" ng-options="department for department in departments">
+        </select>
+        <p>
+
+            Selected Department : {{selectDepartment}}
+        </p>
+        <hr>
+
+        <h2>Department Info</h2>
+        <div ng-switch="selectDepartment">
+
+            <div ng-switch-when="CSE">
+                <h3>Computer Science and Engineering</h3>
+                <p>Department of Computer Science and Engineering (CSE) is one of the most sought after departments in
+                    the field of engineering. It offers a comprehensive curriculum that covers various aspects of
+                    computer science, including programming, algorithms, data structures, software engineering, and
+                    more.</p>
+            </div>
+                <div ng-switch-when="IMCA">
+                    <h3>Information Management and Computer Applications</h3>
+                    <p>The IMCA department focuses on the integration of information technology and management
+                        principles. It equips students with the skills needed to manage information systems, analyze
+                        data, and make informed business decisions.</p>
+
+                </div>
+                <div ng-switch-when="MCA">
+                    <h3>Master of Computer Applications</h3>
+                    <p>The MCA department offers advanced studies in computer applications, preparing students for
+                        careers in software development, database management, and IT consulting. The program emphasizes
+                        practical skills and industry-relevant knowledge.</p>
+
+                </div>
+
+                <div ng-switch-when="Mech">
+                    <h3>Mechanical Engineering</h3>
+                    <p>The Mechanical Engineering department focuses on the design, analysis, and manufacturing of
+                        mechanical systems. Students gain expertise in areas such as thermodynamics, fluid mechanics,
+                        and materials science.</p>
+
+                </div>
+                <div ng-switch-when="Civil">
+                    <h3>Civil Engineering</h3>
+                    <p>The Civil Engineering department is dedicated to the planning, design, and construction of
+                        infrastructure projects. Students learn about structural engineering, transportation systems,
+                        and environmental sustainability.</p>
+
+                </div>
+                <div ng-switch-when="EEE">
+                    <h3>Electrical and Electronics Engineering</h3>
+                    <p>The EEE department focuses on the study of electrical systems, electronics, and power generation.
+                        Students gain knowledge in areas such as circuit design, control systems, and renewable energy
+                        technologies.</p>
+
+                </div>
+                <div ng-switch-when="MBA">
+                    <h3>Master of Business Administration</h3>
+                    <p>The MBA department offers a comprehensive program in business management, covering areas such as
+                        finance, marketing, human resources, and strategic planning. Students develop leadership skills
+                        and business acumen to excel in the corporate world.</p>
+
+                </div>
+              <div ng-switch-default>
+                <h3>Please select a Department </h3>
+
+              </div>
+            </div>
 
 
 
 
 
-</body>
+
+        </div>
+
+
+
+    </body>
 
 </html>

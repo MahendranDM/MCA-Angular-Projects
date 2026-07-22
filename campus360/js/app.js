@@ -19,7 +19,7 @@ $scope.fees =25500;
 $scope.today = new Date();
 
 $scope.departments = ["CSE", "IMCA", "MCA", "Mech", "Civil", "EEE", "MBA"];
-$scope.selectDepartment = "CSE";
+$scope.selectDepartment = " ";
 
 
     $scope.addStudent = function () {
