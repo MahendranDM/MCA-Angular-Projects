@@ -189,9 +189,14 @@
 <label >
         Student Name : 
 </label>
-<input type="text"  name="studentName"  ng-model="studentNameForm" required />
+<input type="text"  name="studentName"  ng-model="studentNameForm" ng-minlength="4" ng-maxlength="15" required />
 <p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.required" style="color:red">
     Student Name is required</p>
+    <p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.minlength" style="color:red">
+    Student Name must be Atleast 4 Characters</p>
+
+    <p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.maxlength" style="color:red">
+    Student Name must be no more than 15 Characters</p>
 <br><br>
 <label >  
         Student Email :
