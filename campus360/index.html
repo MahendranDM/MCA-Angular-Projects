@@ -86,177 +86,218 @@
                     computer science, including programming, algorithms, data structures, software engineering, and
                     more.</p>
             </div>
-                <div ng-switch-when="IMCA">
-                    <h3>Information Management and Computer Applications</h3>
-                    <p>The IMCA department focuses on the integration of information technology and management
-                        principles. It equips students with the skills needed to manage information systems, analyze
-                        data, and make informed business decisions.</p>
+            <div ng-switch-when="IMCA">
+                <h3>Information Management and Computer Applications</h3>
+                <p>The IMCA department focuses on the integration of information technology and management
+                    principles. It equips students with the skills needed to manage information systems, analyze
+                    data, and make informed business decisions.</p>
 
-                </div>
-                <div ng-switch-when="MCA">
-                    <h3>Master of Computer Applications</h3>
-                    <p>The MCA department offers advanced studies in computer applications, preparing students for
-                        careers in software development, database management, and IT consulting. The program emphasizes
-                        practical skills and industry-relevant knowledge.</p>
+            </div>
+            <div ng-switch-when="MCA">
+                <h3>Master of Computer Applications</h3>
+                <p>The MCA department offers advanced studies in computer applications, preparing students for
+                    careers in software development, database management, and IT consulting. The program emphasizes
+                    practical skills and industry-relevant knowledge.</p>
 
-                </div>
+            </div>
 
-                <div ng-switch-when="Mech">
-                    <h3>Mechanical Engineering</h3>
-                    <p>The Mechanical Engineering department focuses on the design, analysis, and manufacturing of
-                        mechanical systems. Students gain expertise in areas such as thermodynamics, fluid mechanics,
-                        and materials science.</p>
+            <div ng-switch-when="Mech">
+                <h3>Mechanical Engineering</h3>
+                <p>The Mechanical Engineering department focuses on the design, analysis, and manufacturing of
+                    mechanical systems. Students gain expertise in areas such as thermodynamics, fluid mechanics,
+                    and materials science.</p>
 
-                </div>
-                <div ng-switch-when="Civil">
-                    <h3>Civil Engineering</h3>
-                    <p>The Civil Engineering department is dedicated to the planning, design, and construction of
-                        infrastructure projects. Students learn about structural engineering, transportation systems,
-                        and environmental sustainability.</p>
+            </div>
+            <div ng-switch-when="Civil">
+                <h3>Civil Engineering</h3>
+                <p>The Civil Engineering department is dedicated to the planning, design, and construction of
+                    infrastructure projects. Students learn about structural engineering, transportation systems,
+                    and environmental sustainability.</p>
 
-                </div>
-                <div ng-switch-when="EEE">
-                    <h3>Electrical and Electronics Engineering</h3>
-                    <p>The EEE department focuses on the study of electrical systems, electronics, and power generation.
-                        Students gain knowledge in areas such as circuit design, control systems, and renewable energy
-                        technologies.</p>
+            </div>
+            <div ng-switch-when="EEE">
+                <h3>Electrical and Electronics Engineering</h3>
+                <p>The EEE department focuses on the study of electrical systems, electronics, and power generation.
+                    Students gain knowledge in areas such as circuit design, control systems, and renewable energy
+                    technologies.</p>
 
-                </div>
-                <div ng-switch-when="MBA">
-                    <h3>Master of Business Administration</h3>
-                    <p>The MBA department offers a comprehensive program in business management, covering areas such as
-                        finance, marketing, human resources, and strategic planning. Students develop leadership skills
-                        and business acumen to excel in the corporate world.</p>
+            </div>
+            <div ng-switch-when="MBA">
+                <h3>Master of Business Administration</h3>
+                <p>The MBA department offers a comprehensive program in business management, covering areas such as
+                    finance, marketing, human resources, and strategic planning. Students develop leadership skills
+                    and business acumen to excel in the corporate world.</p>
 
-                </div>
-              <div ng-switch-default>
+            </div>
+            <div ng-switch-default>
                 <h3>Please select a Department </h3>
 
-              </div>
             </div>
         </div>
+        </div>
 
-<hr>
+        <hr>
         <h2>ng-init Demo</h2>
-<div ng-init="collegeCode='CS123'; location='Kochi'">    
-    <p>College Code : {{collegeCode}}</p>
-    <p>College Location : {{location}}</p>
+        <div ng-init="collegeCode='CS123'; location='Kochi'">
+            <p>College Code : {{collegeCode}}</p>
+            <p>College Location : {{location}}</p>
 
-</div>
-<hr>
+        </div>
+        <hr>
 
-<h2>ng-disable demo</h2>
-<button ng-click="allowAdmission()">
-    Allow Admission
+        <h2>ng-disable demo</h2>
+        <button ng-click="allowAdmission()">
+            Allow Admission
 
-</button>
+        </button>
 
-<br><br><br>
+        <br><br><br>
 
-<button ng-disabled="isDisabled">
-    Admission
+        <button ng-disabled="isDisabled">
+            Admission
 
-</button>
-
-
-<br><br>
+        </button>
 
 
-<hr>
-
-<h2>ng-readonly demo</h2>
-
-<label> College  id</label>
-
-<br><br><br>
+        <br><br>
 
 
-<input type="text" ng-model="" ng-readonly="isReadonly">
+        <hr>
 
-<br><br>
-<button ng-click="isReadonly = !isReadonly">
-    Toggle Readonly
-</button>
-<p>Readonly status : {{isReadonly}}
-</p>
+        <h2>ng-readonly demo</h2>
 
-<hr>
-<br><br>
+        <label> College id</label>
+
+        <br><br><br>
 
 
-<h2>Student Registration</h2>
-<form name="studentForm">
-<label >
-        Student Name : 
-</label>
-<input type="text"  name="studentName"  ng-model="studentNameForm" ng-minlength="4" ng-maxlength="15" required />
-<p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.required" style="color:red">
-    Student Name is required</p>
-    <p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.minlength" style="color:red">
-    Student Name must be Atleast 4 Characters</p>
+        <input type="text" ng-model="" ng-readonly="isReadonly">
 
-    <p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.maxlength" style="color:red">
-    Student Name must be no more than 15 Characters</p>
-<br><br>
-<label >  
-        Student Email :
-</label>
-<input type="email" ng-model="studentEmailForm"  name="studentEmail" required />
+        <br><br>
+        <button ng-click="isReadonly = !isReadonly">
+            Toggle Readonly
+        </button>
+        <p>Readonly status : {{isReadonly}}
+        </p>
 
-<p ng-show="studentForm.studentEmail.$touched && studentForm.studentEmail.$error.required" style="color:red">
-    Student Email is required</p>
-<br><br>
-<label > Student Phone :
-</label>
-<input type="tel" ng-model="studentPhoneForm" />
-<br><br>    
+        <hr>
+        <br><br>
 
 
+        <h2>Student Registration</h2>
+        <form name="studentForm">
+            <label>
+                Student Name :
+            </label>
+            <input type="text" name="studentName" ng-model="studentNameForm" ng-minlength="4" ng-maxlength="15"
+                required />
+            <p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.required" style="color:red">
+                Student Name is required</p>
+            <p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.minlength" style="color:red">
+                Student Name must be Atleast 4 Characters</p>
+
+            <p ng-show="studentForm.studentName.$touched && studentForm.studentName.$error.maxlength" style="color:red">
+                Student Name must be no more than 15 Characters</p>
+            <br><br>
+            <label>
+                Student Email :
+            </label>
+            <input type="email" ng-model="studentEmailForm" name="studentEmail" required />
+
+            <p ng-show="studentForm.studentEmail.$touched && studentForm.studentEmail.$error.required"
+                style="color:red">
+                Student Email is required</p>
 
 
-<label > Student Age :      
-</label>
-<input type="number" ng-model="studentAgeForm" />
-<br><br>
-<label > Student Department :   
-</label>
-<select ng-model="studentDepartmentForm" ng-options="department for department in departments" list="departmentsList" ></select>
-<br><br>
+            <p ng-show="studentForm.studentEmail.$touched && studentForm.studentEmail.$error.email" style="color:red">
+                Student Email Must be Valid</p>
+            <br><br>
+            <label> Student Phone :
+            </label>
+            <input type="tel" ng-model="studentPhoneForm" name="studentPhone" ng-pattern="/^[0-9]{10}$/" required />
 
+            <p ng-show="studentForm.studentPhone.$touched && studentForm.studentPhone.$error.required"
+                style="color:red">
+                Student Phone is required
+            </p>
 
-<label> Student Gender :
-</label>    
-<input type="radio" ng-model="studentGenderForm" value="Male"> Male
-<input type="radio" ng-model="studentGenderForm" value="Female"> Female
-<br><br>
+            <p ng-show="studentForm.studentPhone.$touched && studentForm.studentPhone.$error.pattern" style="color:red">
+                Student Phone must be exactly 10 digits
+            </p>
+            <br><br>
 
 
 
-<label> Student Address :
-</label>
-<input type="text" ng-model="studentAddressForm"/ >
-<br><br>
-<button type="submit" >Register</button>
-<button type="reset" >Reset</button>
 
-</form>
+            <label> Student Age :
+            </label>
+            <input type="number" ng-model="studentAgeForm" name="studentAge" min="18" required />
 
-<hr>
-<br><br>
+            <p ng-show="studentForm.studentAge.$touched && studentForm.studentAge.$error.required" style="color:red">
+                Student Age is required
+            </p>
 
-<h2>Form Status</h2>
+            <p ng-show="studentForm.studentAge.$touched && studentForm.studentAge.$error.min" style="color:red">
+                Student Age must be 18 or above
+            </p>
+            <br><br>
+            <label> Student Department :
+            </label>
+            <select ng-model="selectDepartment" ng-options="department for department in departments "
+                list="departmentsList"></select>
+            <br><br>
 
-<p>Form Valid : {{studentForm.$valid}}</p>
-<p>Form Invalid : {{studentForm.$invalid}}</p>
-<p>Form Pristine : {{studentForm.$pristine}}</p>
-<p>Form Dirty : {{studentForm.$dirty}}</p>
-<p>Form Submitted : {{studentForm.$submitted}}
-</p>
-<br><br>
 
-<p>Student Name Valid : {{studentForm.studentName.$valid}}</p>
-<p>Student Name Invalid : {{studentForm.studentName.$invalid}}</p>
-<p>Student Name error required : {{studentForm.studentName.$error.required}}</p>
+            <label> Student Gender :
+            </label>
+            <input type="radio" ng-model="studentGenderForm" value="Male" ng-init="studentGenderForm='Male'"> Male
+            <input type="radio" ng-model="studentGenderForm" value="Female" ng-init="studentGenderForm='Female'"> Female
+
+            <br><br>
+
+
+
+            <label> Student Address :
+            </label>
+            <input type="text" ng-model="studentAddressForm" name="studentAddress" ng-minlength="10" ng-maxlength="100"
+                required />
+
+            <p ng-show="studentForm.studentAddress.$touched && studentForm.studentAddress.$error.required"
+                style="color:red">
+                Student Address is required
+            </p>
+
+            <p ng-show="studentForm.studentAddress.$touched && studentForm.studentAddress.$error.minlength"
+                style="color:red">
+                Student Address must be at least 10 characters
+            </p>
+
+            <p ng-show="studentForm.studentAddress.$touched && studentForm.studentAddress.$error.maxlength"
+                style="color:red">
+                Student Address must not exceed 100 characters
+            </p>
+            <br><br>
+            <button type="submit">Register</button>
+            <button type="reset">Reset</button>
+
+        </form>
+
+        <hr>
+        <br><br>
+
+        <h2>Form Status</h2>
+
+        <p>Form Valid : {{studentForm.$valid}}</p>
+        <p>Form Invalid : {{studentForm.$invalid}}</p>
+        <p>Form Pristine : {{studentForm.$pristine}}</p>
+        <p>Form Dirty : {{studentForm.$dirty}}</p>
+        <p>Form Submitted : {{studentForm.$submitted}}
+        </p>
+        <br><br>
+
+        <p>Student Name Valid : {{studentForm.studentName.$valid}}</p>
+        <p>Student Name Invalid : {{studentForm.studentName.$invalid}}</p>
+        <p>Student Name error required : {{studentForm.studentName.$error.required}}</p>
 
 
 
