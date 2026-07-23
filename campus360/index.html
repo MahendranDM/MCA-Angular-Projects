@@ -179,6 +179,73 @@
 </button>
 <p>Readonly status : {{isReadonly}}
 </p>
+
+<hr>
+<br><br>
+
+
+<h2>Student Registration</h2>
+<form name="studentForm">
+<label >
+        Student Name : 
+</label>
+<input type="text"  ng-model="studentNameForm"/ >
+<br><br>
+<label >  
+        Student Email :
+</label>
+<input type="email" ng-model="studentEmailForm"/ >
+<br><br>
+<label > Student Phone :
+</label>
+<input type="tel" ng-model="studentPhoneForm"/ >
+<br><br>    
+
+
+
+
+<label > Student Age :      
+</label>
+<input type="number" ng-model="studentAgeForm"/  >
+<br><br>
+<label > Student Department :   
+</label>
+<select ng-model="studentDepartmentForm" ng-options="department for department in departments" list="departmentsList" ></select>
+<br><br>
+
+
+<label> Student Gender :
+</label>    
+<input type="radio" ng-model="studentGenderForm" value="Male"> Male
+<input type="radio" ng-model="studentGenderForm" value="Female"> Female
+<br><br>
+
+
+
+<label> Student Address :
+</label>
+<input type="text" ng-model="studentAddressForm"/ >
+<br><br>
+<button type="submit" >Register</button>
+<button type="reset" >Reset</button>
+
+</form>
+
+<hr>
+<br><br>
+
+<h2>Form Status</h2>
+
+<p>Form Valid : {{studentForm.$valid}}</p>
+<p>Form Invalid : {{studentForm.$invalid}}</p>
+<p>Form Pristine : {{studentForm.$pristine}}</p>
+<p>Form Dirty : {{studentForm.$dirty}}</p>
+<p>Form Submitted : {{studentForm.$submitted}}
+
+</p>
+<p ng-show="studentForm.$dirty && studentForm.$invalid" style="color:red">
+    Please fill all required fields</p>
+
     </body>
 
 </html>
